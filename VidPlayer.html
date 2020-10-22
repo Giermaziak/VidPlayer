@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>VidPlayer</title>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="VidPlayer_PT_css/PT_main.css">
+    <script type="text/javascript" src="VidPlayer_PT_js/PT_fnc.js"></script>
+    <script type="text/javascript" src="VidPlayer_PT_js/PT_main.js"></script>
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <div class="PT_vid_box">
+            <video class="PT_video" id="Vid_000_720_mp4" src="BBB_720.mp4" disableremoteplayback
+                webkit-playsinline playsinline>
+                <!-- . na _, jw,   src="videos\bunny\Vid_000_720.mp4"-->
+            </video>
+            <div class="PT_vid_controls">
+                <div class="PT_vid_bg_controls">
+                    <div class="PT_vid_waiter_buffIcon">
+                        <canvas class="PT_vid_buffIcon_canvas"></canvas>
+                    </div>
+                    <!---->
+                </div>
+                <div class="PT_vid_controls_panel">
+
+                    <div class="PT_vid_progress_container">
+                        <div class="PT_vid_progressBar">
+                            <div class="PT_vid_progresBar_content">
+                                <div class="PT_vid_progresBar_buffer"></div>
+                                <div class="PT_vid_progresBar_progress">
+                                    <div class="PT_vid_progresBar_progressPoiner"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="PT_vid_buttons">
+                        <div class="PT_vid_buttons_G1">
+                            <div class="PT_vid_play-pause_btn">
+                                <div class="PT_vid_play-pause_btn_content">
+                                    <div class=PT_vid_play-pause_btn_alt_0></div>
+                                    <div class=PT_vid_play-pause_btn_alt_1></div>
+
+                                </div>
+                            </div>
+                            <div class="PT_vid_timer">
+                                <p><span class="PT_vid_timer_curr">0:00</span> / <span
+                                        class="PT_vid_timer_max">0:00</span></p>
+                            </div>
+                        </div>
+                        <div class="PT_vid_buttons_G2">
+                            <div class="PT_vid_volume_btn">
+                                <div class="PT_vid_volume_wrapp">
+                                    <div class="PT_vid_volume_volBar">
+                                        <div class="PT_vid_volume_volBar_cont">
+                                            <div class="PT_vid_volume_volBar_barHolder">
+                                                <div class="PT_vid_volume_volBar_barHolder_Pointer"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="PT_vid_volume_icon">
+                                        <div class="PT_vid_volume_icon_alt_0"></div>
+                                        <div class="PT_vid_volume_icon_alt_1"></div>
+                                    </div>
+                                    <div class="EOF"></div>
+                                </div>
+                            </div>
+                            <div class="PT_vid_resol-switcher">
+                                <div class="PT_vid_menu_box">
+
+                                    <div class="PT_vid_menu_list PT_menu_main">
+                                        <div class="PT_vid_menu_list_item" onclick="settSwitcher(this, 1)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>Szybkość</p>
+                                            </div>
+                                            <div class="PT_vid_menu_list_item_value">
+                                                <p class="Pt_vid_sett_0">Normalna</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="settSwitcher(this, 2)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>Jakość</p>
+                                            </div>
+                                            <div class="PT_vid_menu_list_item_value">
+                                                <p class="Pt_vid_sett_1">480p</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="PT_vid_menu_list PT_menu_volume">
+                                        <div class="PT_vid_menu_list_item" onclick="settSwitcher(this, 0)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>Wstecz</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="speedVid(this, 2)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>x2</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="speedVid(this, 1.5)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>x1.5</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="speedVid(this, 1)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>x1</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="speedVid(this, 0.5)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>x0.5</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item"  onclick="speedVid(this, 0.25)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>x0.25</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="PT_vid_menu_list PT_menu_quality">
+                                        <div class="PT_vid_menu_list_item" onclick="settSwitcher(this, 0)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>Wstecz</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="qualityVid(this, 3)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>720p</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="qualityVid(this, 2)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>480p</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="qualityVid(this, 1)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>360p</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                        <div class="PT_vid_menu_list_item" onclick="qualityVid(this, 0)">
+                                            <div class="PT_vid_menu_list_item_desc">
+                                                <p>240p</p>
+                                            </div>
+                                            <div class="EOF"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="PT_vid_full-scr_btn">
+                                <div class="PT_vid_full-scr_btn_alt0"></div>
+                                <div class="PT_vid_full-scr_btn_alt1"></div>
+                            </div>
+                        </div>
+                        <div class="EOF"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- <script src="https://vjs.zencdn.net/7.8.4/video.js"></script>-->
+    <!-- The same lib, but form inernet
+    <script src="libraries\video.js"></script>-->
+</body>
+
+</html>
